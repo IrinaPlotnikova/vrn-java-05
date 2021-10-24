@@ -19,20 +19,23 @@ public class ReverseInteger {
 
         inputNumber = Math.abs(inputNumber);
 
-        while (inputNumber != 0){
+        while (inputNumber != 0) {
             reversedNumber *= 10;
             reversedNumber += inputNumber % 10;
 
             inputNumber /= 10;
         }
 
-        if (isNegativeInputNumber)
+        if (isNegativeInputNumber) {
             reversedNumber *= -1;
+        }
 
-        if (reversedNumber > Integer.MAX_VALUE)
+        if (reversedNumber > Integer.MAX_VALUE) {
             throw new OutOfIntException("Reversed number is greater then " + Integer.MAX_VALUE);
-        if (reversedNumber < Integer.MIN_VALUE)
+        }
+        if (reversedNumber < Integer.MIN_VALUE) {
             throw new OutOfIntException("Reversed number is less then " + Integer.MIN_VALUE);
+        }
 
 
         return (int)reversedNumber;
